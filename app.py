@@ -169,7 +169,7 @@ def index():
     if request.method == "POST":
         captcha = request.form['captcha']
         image = process_image(captcha)
-        result = Captcha_detection(image, 6, 0.7)
+        result = Captcha_detection(image, 6, 0.5)
     return render_template('index.html', **locals())
 
 @app.route('/predict/', methods=["POST"])
