@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="block1">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="generator"
+    content="Captcha Solver Demo" />
+    <title>Captcha Solver Demo - Nagaraju Gunda</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+      <form action="" method="post">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <h3>Captcha Solver Demo!</h3>
+          <br />
+          <div class="row">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="col-md-6">
+                  <textarea class="form-control" rows="10" name="captcha">{% if captcha is defined %} {{ captcha }} {% endif %}</textarea>
+                </div>
+                <div class="col-md-6">
+                <br /> <label for="comment">Result</label><br />
+                <textarea disabled class="form-control" rows="1" name="result">{% if result is defined %} {{ result }} {% endif %}</textarea></div>
+                <span id="result_captcha">{% if captcha is defined %} <img src="{{ captcha }}"> {% endif %}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+        
+      <div class="col-md-1"></div>
+      <button id="submit" class="btn btn-primary" type="submit">
+                    <span>Go!</span></button>
+                    </form>
+    </div>
+  </body>
+</html>
+{% endblock %}
